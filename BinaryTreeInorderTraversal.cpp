@@ -21,7 +21,9 @@ JAN 15 2014
 Reference: http://leetcode.com/2010/04/binary-search-tree-in-order-traversal.html
 http://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion/
 
-TODO fix the commented code.
+Problem with the commented code:
+Already visited left child would be re-pushed into stack when its parent is accessed. 
+To solve the problem, have a n-size vector note if the node has been visited. Takes extra O(n) space.
 */
 
 /**
@@ -42,7 +44,6 @@ public:
         stack<TreeNode*> traverse;
         TreeNode *ptr = root;
         //traverse.push(ptr);
-        
         while (!traverse.empty() || ptr)
         {
             if (ptr)
@@ -61,6 +62,7 @@ public:
         /*
         while(!traverse.empty())
         {
+            // ptr is always the top of stack, an already visited left child could be re-pushed into stack when accessing its parent.
             if (ptr->left)
             {
                 traverse.push(ptr->left);
