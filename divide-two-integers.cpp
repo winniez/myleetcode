@@ -21,7 +21,9 @@ Assignment-level expressions    = *= /= %= += -=
 >>= <<= &= ^= |=    assignment / compound assignment    Right-to-left
 
 Note:
-convert to double before calling abs, otherwise overflows. TODO why???
+convert to double before calling abs, otherwise overflows.
+inputs near INT_MIN and INT_MAX could overflow when shifting/
+also in c++, int and long int type have same range –2,147,483,648 to 2,147,483,647
 e.g.
 Input:  -2147483648, 1
 Output: 0
@@ -35,8 +37,8 @@ class Solution {
 public:
     int divide(int dividend, int divisor) {
         long long rtn = 0;
-        long long tmp1 = abs((double)dividend);
-        long long tmp2 = abs((double)divisor);
+        long long tmp1 = abs((long long)dividend);
+        long long tmp2 = abs((long long)divisor);
         long long tmp3;
         while (tmp1 >= tmp2)
         {
