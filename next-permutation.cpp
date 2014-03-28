@@ -24,6 +24,7 @@ Note the case when violation number is not found. Which indicates that the input
 Time O(n) space constant.
 Reference:
 http://fisherlei.blogspot.com/2012/12/leetcode-next-permutation.html
+http://en.wikipedia.org/wiki/Permutation#Generation_in_lexicographic_order
 */
 class Solution {
 public:
