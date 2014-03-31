@@ -8,6 +8,12 @@ Solution:
 1. A version of find kth element in the join of 2 sorted arrays.
 http://fisherlei.blogspot.com/2012/12/leetcode-median-of-two-sorted-arrays.html
 Each time discard half of A or B.
+
+If (m/2+n/2+1) > k && am/2 > bn/2 , drop Section am/2~am-1
+If (m/2+n/2+1) > k && am/2 < bn/2 , drop Section bn/2~bn-1
+If (m/2+n/2+1) < k && am/2 > bn/2 ,  drop Section b0~bn/2
+If (m/2+n/2+1) < k && am/2 < bn/2 ,  drop Section a0~am/2
+
 Note: n-(n/2+1) is different from n/2-1 as the divide will floor to int.
 
 Time O(log m + log n)
