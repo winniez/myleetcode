@@ -10,6 +10,9 @@ http://fisherlei.blogspot.com/2012/12/leetcode-median-of-two-sorted-arrays.html
 Each time discard half of A or B.
 Note: n-(n/2+1) is different from n/2-1 as the divide will floor to int.
 
+Time O(log m + log n)
+logm + logn = log(mn)  <= log( (m + n)  ^ 2) =2 log(m + n)  = O(log(m + n))
+
 2. Binary search
 http://leetcode.com/2011/03/median-of-two-sorted-arrays.html
 
